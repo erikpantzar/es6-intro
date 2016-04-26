@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<style type="text/css">
+			.reveal .ib { display: inline-block;  width: auto; margin: auto; }
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>ES2015</h1>
+					<img class="plain" src="http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s200/js.jpg">
+				</section>
+
+				<section>
+					<h2>ES2015</h2>
+					<ul>
+						<li>What is it?</li>
+						<li>How do we use it?</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Wait a minute!</p>
+					<h1>Is it Too early?!</h1>
+					<p><a href="https://kangax.github.io/compat-table/es6/">https://kangax.github.io/compat-table/es6/</a></p>
+				</section>
+
+				<section>
+					<section>
+						<h1>Dont worry bro..</h1>
+						<p>We're all gonna make it</p>
+						<img class="fragment plain" src="img/babel-seeklogo.com.svg">
+					</section>
+
+					<section>
+						<h2>What is babel?</h2>
+						<ul>
+							<li>Installation
+				<pre><code class="javascript">npm install -g babel</code></pre>
+							</li>
+
+							<li>Usage - Gulp, Grunt, </li>
+							<li>Settings</li>
+							<li>Lala...</li>
+						</ul>
+
+					</section>
+					<section>
+						<h2>Sry bro, not this time</h2>
+						<p><a href="http://babeljs.io/">http://babeljs.io/</a></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Advantages</h2>
+
+						<div class="fragment">
+							<img class="plain" width="100%" src="img/baller.gif">
+						</div>
+					</section>
+
+					<section>
+						<h2>Advantages</h2>
+
+						<ul>
+							<li class="fragment"><STRONG>GOOD STRUCTURE</STRONG> in applications code</li>
+							<li  class="fragment">It is the <STRONG>CURRENT SPEC</STRONG></li>
+							<li class="fragment">New good <strong>FEATURES</strong> (let, const, arrows...)</li>
+							<li class="fragment">Tooling, IDEs etc</li>
+							<li class="fragment">Forward compatability</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Drawbacks</h2>
+						<ul>
+							<li class="fragment">Project time increased?</li>
+							<li class="fragment">Increased tech stack</li>
+							<li class="fragment">Too new for (other) developers</li>
+						</ul>
+
+						<img  class="fragment plain" width class=plain src="img/developers.gif">
+					</section>
+					<section>
+						<h4>The Drawbacks of waiting?</h4>
+					 	<h1>Discussioné</h1>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h1>Variables</h1>
+					<p>New set of toys</p>
+					<ul>
+						<li>var - same old</li>
+						<li>let - block scoped</li>
+						<li>const - CONSTANT!</li>
+					</ul>
+					</section>
+					<section>
+  						<h1>let</h1>
+  						<p>We all know var, kinda? But what is and how does <em>'let'</em> work?</p>
+              <p><em>'let'</em> is a more block related, a bit more temp kind of a variable that only live in its declared</p>
+              </section>
+            <section>
+            <h2>Let Example</h2>
+<pre><code class="javascript">
+  // Let example
+  function f() {
+    let x = 99;
+    if (true) {
+      let x = 3; // other variable
+      console.log(x); // 3
+    }
+    console.log(x); // 99
+  }
+</code></pre>
+					</section>
+
+          <section>
+            <h2>Const</h2>
+            <p>Works in similiar fashion as other languages with the same type. It doesn't like getting overwritten! Main advantage is the reader of the code knows that this variable shouldn't get overwritten.</p>
+          </section>
+
+
+<section><h2>Const example</h2><pre><code class="javascript">
+  // Assigning to A const variable is a syntax error
+  const A = 1; A = 2;
+
+  // const requires an initializer
+  const FOO; // SyntaxError: missing = in const declaration
+
+  // const also works on objects
+  const MY_OBJECT = {"key": "value"};
+
+  // Overwriting the object fails as above (in Firefox and Chrome but not in Safari)
+  MY_OBJECT = {"OTHER_KEY": "value"};
+
+  // However, object keys are not protected,
+  // so the following statement is executed without problems
+  MY_OBJECT.key = "otherValue"; // Use Object.freeze() to make object immutable
+
+</code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">Mozilla Source</a></p>
+</section>
+        </section>
+
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
