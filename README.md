@@ -6,11 +6,16 @@ That means that today, ES6 is effectively syntastical sugar. What we write is no
 ## 1. Advantages of ES6 enviroment
 ES6 is the next step in webdevelopment with javascript. It introduces new managment of variables, and nicer more readable syntax while also giving us tools to easier handle our data in a more straightforward way.
 
+### For me
+- Module loaders right in vanillaJs!!
+- Better structure (let, const, arrows, maps, default parameters)
+
 ## 2. FEATURES
 ### 2.1 Fav features
 - New variable "holders" (let, const)
 - Template strings
 - Arrow functions
+- Default parameters
 - [New library additions](https://github.com/lukehoban/es6features#math--number--string--array--object-apis)
 - Modules and module-loaders
 
@@ -29,20 +34,19 @@ Don't really get theese, or wher and when to apply these features.
 - Proxies
 - Default + Rest + Spread
 
-----------
+--------------------------------------------
 
 ## 3. Tools for compiling ES2015 / ES6
-- traceur
 - babel
 - Shims
+- traceur
 
 ### 3.1 Babel
 [Babel handbook](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/user-handbook.md)
 ### 3.2 Shims
 [https://github.com/paulmillr/es6-shim/](https://github.com/paulmillr/es6-shim/#es6-shim)
 
-
------------
+--------------------------------------------
 
 ## 0. Sources
 A couple of links to my sources that summarize stuff
