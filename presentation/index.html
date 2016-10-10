@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>ES6 Bro</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -88,21 +88,14 @@
 						<ul>
 							<li class="fragment"><STRONG>GOOD STRUCTURE</STRONG> in applications code</li>
 							<li  class="fragment">It is the <STRONG>CURRENT SPEC</STRONG></li>
-							<li class="fragment">New good <strong>FEATURES</strong> (let, const, arrows...)</li>
-							<li class="fragment">Tooling, IDEs etc</li>
-							<li class="fragment">Forward compatability</li>
+							<li class="fragment">New good <strong>FEATURES</strong> (let, const, defaultparams etc)</li>
+							<li class="fragment">Tooling, IDEs are ready</li>
 						</ul>
 
 					</section>
 
 					<section>
-						<h2>Drawbacks</h2>
-						<ul>
-							<li class="fragment">Project time increased?</li>
-							<li class="fragment">Increased tech stack</li>
-							<li class="fragment">Too new for (other) developers</li>
-						</ul>
-
+						<h2>Drawbacks?</h2>
 						<img  class="fragment plain" width class=plain src="img/developers.gif">
 					</section>
 					<section>
@@ -116,10 +109,24 @@
 					<h1>Variables</h1>
 					<p>New set of toys</p>
 					<ul>
-						<li>var - same old</li>
 						<li>let - block scoped</li>
 						<li>const - CONSTANT!</li>
 					</ul>
+					</section>
+					<section>
+						<h1>Var</h1>
+						<p>Var leakage</p>
+<pre><code class="javascript">
+	function named() {
+	    var x = 99;
+
+		if(true) {
+	        var x = 3;
+			console.log(x); // 3
+	    }
+	    console.log(x); //  3 :((
+	}
+</code></pre>
 					</section>
 					<section>
   						<h1>let</h1>
@@ -175,15 +182,41 @@
   <img width="100%" src="img/sweet.gif" class="plain fragment">
   </section>
   <section>
-      <h2>=></h2>
-      <p></p>
+      <h2>()=></h2>
+<pre><code class="javascript">
+	let promise = new Promise();
+
+	promise
+		// arrow function
+		.then((response)=> {
+			return response.json();
+		})
+		// normal function
+		.then(function(filteredResponse) {
+			console.log(filteredResponse);
+		});
+
+</code></pre>
+  </section>
+
+  <section>
+  	<h2>Arrow function</h2>
+	<p>Imperative, declarative</p>
+
   </section>
 </section>
-
 
 <section>
   <section>
     <h1>Template ${strings}</h1>
+
+<pre><code class="javascript">
+let variable = "tjeyna";
+let the_template = `
+	<header class="header-${tjeyna}">
+		<h1 class="${variable}">${data.title}</h1>
+	</header>`;
+</code></pre>
   </section>
   <section>
 
@@ -193,9 +226,17 @@
 <section>
   <section>
   <h1>Default parameters</h1>
+  <p>Ever dealt with optional parameters in functions?</p>
   </section>
   <section>
+  <pre><code class="javascript">
+  function doingStuff(template = `<h1>You forgot</h1>`, selector = 'body') {
+	  let el = document.createElement('div');
+	  el.innerHTML = template;
 
+	  // add el to selector etc..
+  }
+  </code></pre>
   </section>
 </section>
 
@@ -211,6 +252,8 @@
 <section>
     <section>
         <h1>Module loaders</h1>
+		<p>Modules are not finalized but...!</p>
+		<ul></ul>
     </section>
     <section>
 
